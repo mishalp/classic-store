@@ -1,4 +1,4 @@
-import { verifyToken } from '@/app/actions'
+import { verifyToken } from '@/app/lib'
 import React from 'react'
 import Link from 'next/link'
 import { buttonVariants } from './ui/button'
@@ -7,6 +7,7 @@ import LogoutBtn from './LogoutBtn'
 
 export default async function Navbar() {
     const user: any = await verifyToken()
+    // const user: any = null
 
     return (
         <div className='p-4 px-8 flex justify-between items-center bg-[#1A1B23] z-10 fixed top-0 w-full max-w-screen shadow'>
@@ -30,7 +31,7 @@ export default async function Navbar() {
                         <LogoutBtn />
                     </>
 
-                ) : <Link className={buttonVariants()} href="/login">
+                ) : <Link className={buttonVariants({variant: "secondary"})} href="/login">
                     Login
                 </Link>
                 }

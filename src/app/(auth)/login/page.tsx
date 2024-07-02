@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { toast } from '@/components/ui/use-toast'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
     email: z.string({
@@ -33,6 +34,7 @@ const formSchema = z.object({
 export default function Login() {
 
     const [loading, setLoading] = useState(false)
+    const router = useRouter()
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -62,7 +64,7 @@ export default function Login() {
                 title: res.error
             })
             
-
+            router.refresh()
             
         } catch (error) {
             console.log(error);

@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { toast } from '@/components/ui/use-toast'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
   name: z.string({
@@ -40,7 +41,7 @@ const formSchema = z.object({
 export default function Register() {
 
   const [loading, setLoading] = useState(false)
-
+  const router = useRouter()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -74,6 +75,10 @@ export default function Register() {
       toast({
         title: "Success"
       })
+
+
+      router.push("/login")
+      
     } catch (error) {
       toast({
         variant: "destructive",

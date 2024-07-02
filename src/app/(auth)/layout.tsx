@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { verifyToken } from "../actions";
+import { verifyToken } from "../lib";
 
 export default async function Layout({
   children,

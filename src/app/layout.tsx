@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster"
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
+import NextTopLoader from 'nextjs-toploader';
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,6 +25,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, "relative")}>
+      <NextTopLoader />
         <Navbar />
         {children}
         <Footer />
