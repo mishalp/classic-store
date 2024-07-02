@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 
 export default function LogoutBtn() {
   return (
-    <Button>
+    <Button variant="secondary">
         Log out
     </Button>
   )

@@ -1,13 +1,14 @@
+import Categories from "@/components/Categories";
 import HeroSection from "@/components/HeroSection";
-import { verifyToken } from "./actions";
+import HomeProducts from "@/components/HomeProducts";
 
 export default async function Home() {
 
-  const user: any = await verifyToken()
-
   return (
-    <main className="min-h-screen items-center flex flex-col gap-4">
+    <main className="min-h-screen items-center flex flex-col mb-2">
       <HeroSection />
+      <Categories />
+      <HomeProducts />
     </main>
   );
 }

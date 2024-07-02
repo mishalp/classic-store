@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,6 +26,7 @@ export default async function RootLayout({
       <body className={cn(inter.className, "relative")}>
         <Navbar />
         {children}
+        <Footer />
         <Toaster />
       </body>
     </html>
